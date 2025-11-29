@@ -57,6 +57,7 @@ $totalnum_items =
         <th>Stock</th>
         <th>Availability</th>
     </tr>
+    <!-- used foreach for all cupcakes instead of individual calling -->
     <?php foreach ($cupcakes as $cc): ?>
     <tr>
         <td><img src="<?= $cc['img'] ?>" class="cupcake-img" alt=""></td>
@@ -66,6 +67,7 @@ $totalnum_items =
         <td><?= $cc['num_items'] ?></td>
         <td>
             <?php 
+            // if else statement for product availability
             if ($cc["num_items"] > 0) {
                 echo "In stock!";
             } else {
@@ -78,8 +80,10 @@ $totalnum_items =
 <div class="footer">
     <?= "Total cupcakes available today: " . $totalnum_items ?>
 </div>
+    <!-- used include for footer -->
 <div class="creds">
-    © 2025 John Paul David — Used Gemini for Image Generation
+<?php include "footer.php"; ?>
 </div>
 </body>
 </html>
+
