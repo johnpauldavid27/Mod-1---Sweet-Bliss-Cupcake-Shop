@@ -1,3 +1,4 @@
+<!-- David, John Paul S. WD-201 -->
 <?php
 $storeNameCC = "Sweet Bliss Cupcake Shop";
 $cupcakes = [
@@ -92,3 +93,4 @@ $totalnum_items =
 </div>
 </body>
 </html>
+
