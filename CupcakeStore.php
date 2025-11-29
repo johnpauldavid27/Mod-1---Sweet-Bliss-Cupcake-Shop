@@ -57,70 +57,23 @@ $totalnum_items =
         <th>Stock</th>
         <th>Availability</th>
     </tr>
+    <?php foreach ($cupcakes as $cc): ?>
     <tr>
-        <td><img src="<?= $cupcakes[0]["img"] ?>" class="cupcake-img" alt=""></td>
-        <td><?= $cupcakes[0]["name"] ?></td>
-        <td><?= $cupcakes[0]["desc"] ?></td>
-        <td>$ <?= $cupcakes[0]["price"] ?></td>
-        <td><?= $cupcakes[0]["num_items"] ?></td>
+        <td><img src="<?= $cc['img'] ?>" class="cupcake-img" alt=""></td>
+        <td><?= $cc['name'] ?></td>
+        <td><?= $cc['desc'] ?></td>
+        <td>$ <?= $cc['price'] ?></td>
+        <td><?= $cc['num_items'] ?></td>
         <td>
             <?php 
-            if ($cupcakes[0]["num_items"] > 0) {
+            if ($cc["num_items"] > 0) {
                 echo "In stock!";
             } else {
                 echo "Out of stock :(";
             }
             ?>
-        </td>
     </tr>
-    <tr>
-        <td><img src="<?= $cupcakes[1]["img"] ?>" class="cupcake-img" alt=""></td>
-        <td><?= $cupcakes[1]["name"] ?></td>
-        <td><?= $cupcakes[1]["desc"] ?></td>
-        <td>$ <?= $cupcakes[1]["price"] ?></td>
-        <td><?= $cupcakes[1]["num_items"] ?></td>
-        <td>
-            <?php 
-            if ($cupcakes[1]["num_items"] > 0) {
-                echo "In stock!";
-            } else {
-                echo "Out of stock :(";
-            }
-            ?>
-        </td>
-    </tr>
-    <tr>
-        <td><img src="<?= $cupcakes[2]["img"] ?>" class="cupcake-img" alt=""></td>
-        <td><?= $cupcakes[2]["name"] ?></td>
-        <td><?= $cupcakes[2]["desc"] ?></td>
-        <td>$ <?= $cupcakes[2]["price"] ?></td>
-        <td><?= $cupcakes[2]["num_items"] ?></td>
-        <td>
-            <?php 
-            if ($cupcakes[2]["num_items"] > 0) {
-                echo "In stock!";
-            } else {
-                echo "Out of stock :(";
-            }
-            ?>
-        </td>
-    </tr>
-    <tr>
-        <td><img src="<?= $cupcakes[3]["img"] ?>" class="cupcake-img" alt=""></td>
-        <td><?= $cupcakes[3]["name"] ?></td>
-        <td><?= $cupcakes[3]["desc"] ?></td>
-        <td>$ <?= $cupcakes[3]["price"] ?></td>
-        <td><?= $cupcakes[3]["num_items"] ?></td>
-        <td>
-            <?php 
-            if ($cupcakes[3]["num_items"] > 0) {
-                echo "In stock!";
-            } else {
-                echo "Out of stock :(";
-            }
-            ?>
-        </td>
-    </tr>
+    <?php endforeach; ?>
 </table>
 <div class="footer">
     <?= "Total cupcakes available today: " . $totalnum_items ?>
@@ -130,5 +83,3 @@ $totalnum_items =
 </div>
 </body>
 </html>
-
-
